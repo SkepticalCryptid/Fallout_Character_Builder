@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fallout 3 Character Builder</title>
+        <meta name="description" content="A character builder for the game Fallout 3">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/_config.css">
+    </head>
+    <body>
+        <h1>S.P.E.C.I.A.L.</h1>
+
+        <!-- Strength -->
+        <div class="stat-container">
+          <h3>Strength</h3>
+          <button class="button" onclick="decreaseStrength()">-</button>
+          <span id="strength">5</span>
+          <button class="button" onclick="increaseStrength()">+</button>
+        </div>
+      
+        <!-- Perception -->
+        <div class="stat-container">
+          <h3>Perception</h3>
+          <button class="button" onclick="decreasePerception()">-</button>
+          <span id="perception">5</span>
+          <button class="button" onclick="increasePerception()">+</button>
+        </div>
+      
+        <!-- Endurance -->
+        <div class="stat-container">
+          <h3>Endurance</h3>
+          <button class="button" onclick="decreaseEndurance()">-</button>
+          <span id="endurance">5</span>
+          <button class="button" onclick="increaseEndurance()">+</button>
+        </div>
+      
+        <!-- Charisma -->
+        <div class="stat-container">
+          <h3>Charisma</h3>
+          <button class="button" onclick="decreaseCharisma()">-</button>
+          <span id="charisma">5</span>
+          <button class="button" onclick="increaseCharisma()">+</button>
+        </div>
+      
+        <!-- Intelligence -->
+        <div class="stat-container">
+          <h3>Intelligence</h3>
+          <button class="button" onclick="decreaseIntelligence()">-</button>
+          <span id="intelligence">5</span>
+          <button class="button" onclick="increaseIntelligence()">+</button>
+        </div>
+      
+        <!-- Agility -->
+        <div class="stat-container">
+          <h3>Agility</h3>
+          <button class="button" onclick="decreaseAgility()">-</button>
+          <span id="agility">5</span>
+          <button class="button" onclick="increaseAgility()">+</button>
+        </div>
+      
+        <!-- Luck -->
+        <div class="stat-container">
+          <h3>Luck</h3>
+          <button class="button" onclick="decreaseLuck()">-</button>
+          <span id="luck">5</span>
+          <button class="button" onclick="increaseLuck()">+</button>
+        </div>
+
+        <div class="stat-container">
+            <h3>Points remaining: <span id="pointsLeft">5</span></h3>
+        </div>
+      
+        <script src="scripts/special.js"></script>
+    </body>
+</html>
