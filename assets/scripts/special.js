@@ -65,6 +65,7 @@ function increaseStrength() {
     updateDisplay('strength', newValue);
     updatePointsLeft(pointsLeft - 1);
   }
+  updateSkill("strength");
 }
 
 // Prevent stat from being lowered if the SPECIAL stat is already at 1, applies to all decreaseX functions
@@ -74,6 +75,7 @@ function decreaseStrength() {
     updateDisplay('strength', newValue);
     updatePointsLeft(pointsLeft + 1);
   }
+  updateSkill("strength");
 }
 
 
@@ -83,6 +85,7 @@ function increasePerception() {
     updateDisplay('perception', newValue);
     updatePointsLeft(pointsLeft - 1);
   }
+  updateSkill("perception");
 }
 
 function decreasePerception() {
@@ -91,22 +94,7 @@ function decreasePerception() {
     updateDisplay('perception', newValue);
     updatePointsLeft(pointsLeft + 1);
   }
-}
-
-function increasePerception() {
-  if (pointsLeft > 0) {
-    const newValue = perception.increase();
-    updateDisplay('perception', newValue);
-    updatePointsLeft(pointsLeft - 1);
-  }
-}
-
-function decreasePerception() {
-  if (perception.getValue() > 1) {
-    const newValue = perception.decrease();
-    updateDisplay('perception', newValue);
-    updatePointsLeft(pointsLeft + 1);
-  }
+  updateSkill("perception");
 }
 
 function increaseEndurance() {
@@ -115,6 +103,7 @@ function increaseEndurance() {
     updateDisplay('endurance', newValue);
     updatePointsLeft(pointsLeft - 1);
   }
+  updateSkill("endurance");
 }
 
 function decreaseEndurance() {
@@ -123,6 +112,7 @@ function decreaseEndurance() {
     updateDisplay('endurance', newValue);
     updatePointsLeft(pointsLeft + 1);
   }
+  updateSkill("endurance");
 }
 
 function increaseCharisma() {
@@ -131,6 +121,7 @@ function increaseCharisma() {
     updateDisplay('charisma', newValue);
     updatePointsLeft(pointsLeft - 1);
   }
+  updateSkill("charisma");
 }
 
 function decreaseCharisma() {
@@ -139,6 +130,7 @@ function decreaseCharisma() {
     updateDisplay('charisma', newValue);
     updatePointsLeft(pointsLeft + 1);
   }
+  updateSkill("charisma");
 }
 
 function increaseIntelligence() {
@@ -147,6 +139,7 @@ function increaseIntelligence() {
     updateDisplay('intelligence', newValue);
     updatePointsLeft(pointsLeft - 1);
   }
+  updateSkill("intelligence");
 }
 
 function decreaseIntelligence() {
@@ -155,6 +148,7 @@ function decreaseIntelligence() {
     updateDisplay('intelligence', newValue);
     updatePointsLeft(pointsLeft + 1);
   }
+  updateSkill("intelligence");
 }
 
 function increaseAgility() {
@@ -163,6 +157,7 @@ function increaseAgility() {
     updateDisplay('agility', newValue);
     updatePointsLeft(pointsLeft - 1);
   }
+  updateSkill("agility");
 }
 
 function decreaseAgility() {
@@ -171,6 +166,7 @@ function decreaseAgility() {
     updateDisplay('agility', newValue);
     updatePointsLeft(pointsLeft + 1);
   }
+  updateSkill("agility");
 }
 
 function increaseLuck() {
@@ -179,6 +175,7 @@ function increaseLuck() {
     updateDisplay('luck', newValue);
     updatePointsLeft(pointsLeft - 1);
   }
+  updateSkill("luck");
 }
 
 function decreaseLuck() {
@@ -187,4 +184,5 @@ function decreaseLuck() {
     updateDisplay('luck', newValue);
     updatePointsLeft(pointsLeft + 1);
   }
+  updateSkill("luck");
 }
