@@ -171,6 +171,216 @@ function updateSkill(skill) {
         default:
         break;
     }
-
 }
 
+// Tag Skills
+
+let tagLeft = 3;
+let taggedState = new Array(13).fill(false);
+const skillClass = document.querySelectorAll('.skill');
+
+function updateTagLeft(tagged) {
+    tagLeft = tagged;
+
+    if (tagLeft > 0) {
+        document.getElementById('taggedLeft').innerText = tagLeft;
+    }
+    else {
+        document.getElementById('taggedLeft').innerText = 0;
+        tagLeft = 0;
+    }
+}
+
+function addTag(skill, arrayLocation) {
+    let skillValue = document.getElementById(skill).innerText;
+    let taggedValue = parseInt(skillValue) + parseInt(15);
+    document.getElementById(skill).innerText = taggedValue;
+    taggedState[arrayLocation] = true;
+    updateTagLeft(tagLeft - 1);
+}
+
+function decreaseTag(skill, arrayLocation) {
+    let skillValue = document.getElementById(skill).innerText;
+    let taggedValue = parseInt(skillValue) - parseInt(15);
+    document.getElementById(skill).innerText = taggedValue;
+    taggedState[arrayLocation] = false;
+    updateTagLeft(tagLeft + 1);
+}
+
+skillClass.forEach((skillName) => {
+    skillName.addEventListener('click', () => {
+        const spanId = skillName.querySelector('span').id;
+
+        switch(spanId) {
+            case "barter":
+                if (!taggedState[0]) {
+                    if (tagLeft > 0) {
+                        addTag("barter", 0);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("barter", 0);
+                    break;
+                }
+                break;
+            case "bigGuns":
+                if (!taggedState[1]) {
+                    if (tagLeft > 0) {
+                        addTag("bigGuns", 1);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("bigGuns", 1);
+                    break;
+                }
+                break;
+            case "energyWeapons":
+                if (!taggedState[2]) {
+                    if (tagLeft > 0) {
+                        addTag("energyWeapons", 2);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("energyWeapons", 2);
+                    break;
+                }
+                break;
+            case "explosives":
+                if (!taggedState[3]) {
+                    if (tagLeft > 0) {
+                        addTag("explosives", 3);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("explosives", 3);
+                    break;
+                }
+                break;
+            case "lockpick":
+                if (!taggedState[4]) {
+                    if (tagLeft > 0) {
+                        addTag("lockpick", 4);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("lockpick", 4);
+                    break;
+                }
+                break;
+            case "medicine":
+                if (!taggedState[5]) {
+                    if (tagLeft > 0) {
+                        addTag("medicine", 5);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("medicine", 5);
+                    break;
+                }
+                break;
+            case "meleeWeapons":
+                if (!taggedState[6]) {
+                    if (tagLeft > 0) {
+                        addTag("meleeWeapons", 6);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("meleeWeapons", 6);
+                    break;
+                }
+                break;
+            case "repair":
+                if (!taggedState[7]) {
+                    if (tagLeft > 0) {
+                        addTag("repair", 7);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("repair", 7);
+                    break;
+                }
+                break;
+            case "science":
+                if (!taggedState[8]) {
+                    if (tagLeft > 0) {
+                        addTag("science", 8);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("science", 8);
+                    break;
+                }
+                break;
+            case "smallGuns":
+                if (!taggedState[9]) {
+                    if (tagLeft > 0) {
+                        addTag("smallGuns", 9);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("smallGuns", 9);
+                    break;
+                }
+                break;
+            case "sneak":
+                if (!taggedState[10]) {
+                    if (tagLeft > 0) {
+                        addTag("sneak", 10);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("sneak", 10);
+                    break;
+                }
+                break;
+            case "speech":
+                if (!taggedState[11]) {
+                    if (tagLeft > 0) {
+                        addTag("speech", 11);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("speech", 11);
+                    break;
+                }
+                break;
+            case "unarmed":
+                if (!taggedState[12]) {
+                    if (tagLeft > 0) {
+                        addTag("unarmed", 12);
+                        break;
+                    } 
+                    break;
+                }
+                else {
+                        decreaseTag("unarmed", 12);
+                    break;
+                }
+                break;
+        }
+    })
+})
