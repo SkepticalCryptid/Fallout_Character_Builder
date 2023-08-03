@@ -1,10 +1,15 @@
+// Collect SPECIAL stat from main page depending on stat looking for
+// Luck will always be collected as it influences all skills
 function getSpecial(stat) {
 
     let luck = document.getElementById('luck').innerText;
 
+    // Uses SPECIAL name given from previous function to determine correct stats to send back
     switch(stat) {
         case "strength": 
             let strength = document.getElementById('strength').innerText;
+            // Retrun corresponding SPECIAL stat along with Luck obtained above
+            // Used twice to correct assign the statistics, e.g. strength from here being passed into strength in the previous function
             return {strength: strength, luck: luck}
         break;
         case "perception":
@@ -32,9 +37,11 @@ function getSpecial(stat) {
     }
 }
 
+// Collects SPECIAL from above and uses them in the formula before returning updated skill number
 function getBarter() {
-
+    // Define two variables and add result of getSpecial to them respectively
     let {charisma, luck} = getSpecial("charisma");
+    // Uses Math.ceil to always round the result up to nearest whole number
     let barter = Math.ceil(2 + (charisma * 2) + (luck / 2));
 
     return barter;
@@ -127,8 +134,10 @@ function getUnarmed() {
 //Called from special.js
 function updateSkill(skill) {
 
+    // SPECIAL stat name passed and used to determine which skills need updating
     switch(skill) {
         case "strength": 
+            // Get the correcsponding skills and set them equal to the result of their respective function
             document.getElementById('meleeWeapons').innerText = getMeleeWeapons();
         break;
         case "perception":
@@ -154,6 +163,7 @@ function updateSkill(skill) {
             document.getElementById('sneak').innerText = getSneak();
         break;
         case "luck":
+            // Luck effects all skills
             document.getElementById('barter').innerText = getBarter();    
             document.getElementById('bigGuns').innerText = getBigGuns();
             document.getElementById('energyWeapons').innerText = getEnergyWeapons();
@@ -174,14 +184,16 @@ function updateSkill(skill) {
 }
 
 // Tag Skills
-
 let tagLeft = 3;
+// Array to track which skill has been tagged or not
 let taggedState = new Array(13).fill(false);
 const skillClass = document.querySelectorAll('.skill');
 
+// Update the display showing how many tags are still available
 function updateTagLeft(tagged) {
     tagLeft = tagged;
 
+    // If tagLeft ever goes below 0, reset back to 0
     if (tagLeft > 0) {
         document.getElementById('taggedLeft').innerText = tagLeft;
     }
@@ -191,14 +203,19 @@ function updateTagLeft(tagged) {
     }
 }
 
+// Add the +15 points to the selected skill and update the Array
+// Takes in both corresponding skill name and the location of the skill in the array
 function addTag(skill, arrayLocation) {
     let skillValue = document.getElementById(skill).innerText;
     let taggedValue = parseInt(skillValue) + parseInt(15);
     document.getElementById(skill).innerText = taggedValue;
     taggedState[arrayLocation] = true;
+
+    // Call updateTagLeft and pass the value of remaining tags -1
     updateTagLeft(tagLeft - 1);
 }
 
+// As above for decreasing skill by 15 and giving back a Tag point
 function decreaseTag(skill, arrayLocation) {
     let skillValue = document.getElementById(skill).innerText;
     let taggedValue = parseInt(skillValue) - parseInt(15);
@@ -207,13 +224,18 @@ function decreaseTag(skill, arrayLocation) {
     updateTagLeft(tagLeft + 1);
 }
 
+// Iterate through all classes with the name skill
 skillClass.forEach((skillName) => {
+    // Determine which one has been clicked based on the id of the <span> within it
     skillName.addEventListener('click', () => {
         const spanId = skillName.querySelector('span').id;
 
+        // Chooses the correct skill based on the id of the <span>
         switch(spanId) {
             case "barter":
+                // If the skill has not been tagged
                 if (!taggedState[0]) {
+                    // Check that Tag points still remain and call addTag passing the skill name and array position
                     if (tagLeft > 0) {
                         addTag("barter", 0);
                         break;
