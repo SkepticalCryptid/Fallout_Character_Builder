@@ -13,133 +13,208 @@
       content="A character builder for the game Fallout 3"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/_config.css" />
   </head>
   <body>
-    <div class="special-container">
-      <h2>S.P.E.C.I.A.L.</h2>
+    <div class="navigation-container">
+      <div class="title">
+        <h1>Fallout 3 Character Builder</h1>
+      </div>
+      <div class="navigation"></div>
+    </div>
 
-      <!-- Strength -->
-      <div class="stat-container">
-        <h3>Strength</h3>
-        <button class="button" onclick="decreaseStrength()">-</button>
-        <span id="strength">5</span>
-        <button class="button" onclick="increaseStrength()">+</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 derived-stats-container">
+          <h3>Derived Statistics</h3>
+
+          <div class="derived-stats">
+            <p>HP: <span id="playerHP">200</span></p>
+          </div>
+
+          <div class="derived-stats">
+            <p>AP: <span id="playerAP">75</span></p>
+          </div>
+
+          <div class="derived-stats">
+            <p>Carry Weight: <span id="carryWeight">200</span></p>
+          </div>
+
+          <div class="derived-stats">
+            <p>Crit Chance: <span id="critChance">5</span>%</p>
+          </div>
+
+          <div class="derived-stats">
+            <p>RAD Resist: <span id="radResist">8</span>%</p>
+          </div>
+
+          <div class="derived-stats">
+            <p>Poison Resist: <span id="poisonResist">20</span>%</p>
+          </div>
+
+          <div class="derived-stats">
+            <p>Skill Rate: <span id="skillRate">15</span></p>
+          </div>
+
+          <div class="derived-stats">
+            <p>Disposition: <span id="disposition">25</span></p>
+          </div>
+
+          <div class="derived-stats">
+            <p>Melee Damage: <span id="meleeDamage">3</span></p>
+          </div>
+
+          <div class="derived-stats">
+            <p>Unarmed Damage: <span id="unarmedDamage">2</span></p>
+          </div>
+        </div>
       </div>
 
-      <!-- Perception -->
-      <div class="stat-container">
-        <h3>Perception</h3>
-        <button class="button" onclick="decreasePerception()">-</button>
-        <span id="perception">5</span>
-        <button class="button" onclick="increasePerception()">+</button>
-      </div>
+      <div class="row">
+        <div class="col-md-4 special-container">
+          <h2>S.P.E.C.I.A.L.</h2>
 
-      <!-- Endurance -->
-      <div class="stat-container">
-        <h3>Endurance</h3>
-        <button class="button" onclick="decreaseEndurance()">-</button>
-        <span id="endurance">5</span>
-        <button class="button" onclick="increaseEndurance()">+</button>
-      </div>
+          <!-- Strength -->
+          <div class="stat-container">
+            <h3>Strength</h3>
+            <button class="button" onclick="decreaseStrength()">-</button>
+            <span id="strength">5</span>
+            <button class="button" onclick="increaseStrength()">+</button>
+          </div>
 
-      <!-- Charisma -->
-      <div class="stat-container">
-        <h3>Charisma</h3>
-        <button class="button" onclick="decreaseCharisma()">-</button>
-        <span id="charisma">5</span>
-        <button class="button" onclick="increaseCharisma()">+</button>
-      </div>
+          <!-- Perception -->
+          <div class="stat-container">
+            <h3>Perception</h3>
+            <button class="button" onclick="decreasePerception()">-</button>
+            <span id="perception">5</span>
+            <button class="button" onclick="increasePerception()">+</button>
+          </div>
 
-      <!-- Intelligence -->
-      <div class="stat-container">
-        <h3>Intelligence</h3>
-        <button class="button" onclick="decreaseIntelligence()">-</button>
-        <span id="intelligence">5</span>
-        <button class="button" onclick="increaseIntelligence()">+</button>
-      </div>
+          <!-- Endurance -->
+          <div class="stat-container">
+            <h3>Endurance</h3>
+            <button class="button" onclick="decreaseEndurance()">-</button>
+            <span id="endurance">5</span>
+            <button class="button" onclick="increaseEndurance()">+</button>
+          </div>
 
-      <!-- Agility -->
-      <div class="stat-container">
-        <h3>Agility</h3>
-        <button class="button" onclick="decreaseAgility()">-</button>
-        <span id="agility">5</span>
-        <button class="button" onclick="increaseAgility()">+</button>
-      </div>
+          <!-- Charisma -->
+          <div class="stat-container">
+            <h3>Charisma</h3>
+            <button class="button" onclick="decreaseCharisma()">-</button>
+            <span id="charisma">5</span>
+            <button class="button" onclick="increaseCharisma()">+</button>
+          </div>
 
-      <!-- Luck -->
-      <div class="stat-container">
-        <h3>Luck</h3>
-        <button class="button" onclick="decreaseLuck()">-</button>
-        <span id="luck">5</span>
-        <button class="button" onclick="increaseLuck()">+</button>
-      </div>
+          <!-- Intelligence -->
+          <div class="stat-container">
+            <h3>Intelligence</h3>
+            <button class="button" onclick="decreaseIntelligence()">-</button>
+            <span id="intelligence">5</span>
+            <button class="button" onclick="increaseIntelligence()">+</button>
+          </div>
 
-      <div class="stat-container">
-        <h3>Points remaining: <span id="pointsLeft">5</span></h3>
+          <!-- Agility -->
+          <div class="stat-container">
+            <h3>Agility</h3>
+            <button class="button" onclick="decreaseAgility()">-</button>
+            <span id="agility">5</span>
+            <button class="button" onclick="increaseAgility()">+</button>
+          </div>
+
+          <!-- Luck -->
+          <div class="stat-container">
+            <h3>Luck</h3>
+            <button class="button" onclick="decreaseLuck()">-</button>
+            <span id="luck">5</span>
+            <button class="button" onclick="increaseLuck()">+</button>
+          </div>
+
+          <div class="stat-container">
+            <h3>Points remaining: <span id="pointsLeft">5</span></h3>
+          </div>
+        </div>
+
+        <div class="col-md-8 skill-container">
+          <h2>Skills</h2>
+
+          <h3>Tagged Skills Left <span id="taggedLeft">3</span></h3>
+
+          <div class="skill">
+            <p>Barter: <span id="barter">15</span></p>
+          </div>
+
+          <div class="skill">
+            <p>Big Guns: <span id="bigGuns">15</span></p>
+          </div>
+
+          <div class="skill">
+            <p>Energy Weapons: <span id="energyWeapons">15</span></p>
+          </div>
+
+          <div class="skill">
+            <p>Explosives: <span id="explosives">15</span></p>
+          </div>
+
+          <div class="skill">
+            <p>Lockpick: <span id="lockpick">15</span></p>
+          </div>
+
+          <div class="skill">
+            <p>Medicine: <span id="medicine">15</span></p>
+          </div>
+
+          <div class="skill">
+            <p>Melee Weapons: <span id="meleeWeapons">15</span></p>
+          </div>
+
+          <div class="skill">
+            <p>Repair: <span id="repair">15</span></p>
+          </div>
+
+          <div class="skill">
+            <p>Science: <span id="science">15</span></p>
+          </div>
+
+          <div class="skill">
+            <p>Small Guns: <span id="smallGuns">15</span></p>
+          </div>
+
+          <div class="skill">
+            <p>Sneak: <span id="sneak">15</span></p>
+          </div>
+
+          <div class="skill">
+            <p>Speech: <span id="speech">15</span></p>
+          </div>
+
+          <div class="skill">
+            <p>Unarmed: <span id="unarmed">15</span></p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="skill-container">
-      <h2>Skills</h2>
-
-      <h3>Tagged Skills Left <span id="taggedLeft">3</span></h3>
-
-      <div class="skill">
-        <p>Barter: <span id="barter">15</span></p>
+    <div class="footer-container">
+      <div class="legal-info"></div>
+      <div class="made-by">
+        <p>Created by <a href="wwww.adamrobertson.info">Adam Robertson</a></p>
       </div>
-
-      <div class="skill">
-        <p>Big Guns: <span id="bigGuns">15</span></p>
-      </div>
-
-      <div class="skill">
-        <p>Energy Weapons: <span id="energyWeapons">15</span></p>
-      </div>
-
-      <div class="skill">
-        <p>Explosives: <span id="explosives">15</span></p>
-      </div>
-
-      <div class="skill">
-        <p>Lockpick: <span id="lockpick">15</span></p>
-      </div>
-
-      <div class="skill">
-        <p>Medicine: <span id="medicine">15</span></p>
-      </div>
-
-      <div class="skill">
-        <p>Melee Weapons: <span id="meleeWeapons">15</span></p>
-      </div>
-
-      <div class="skill">
-        <p>Repair: <span id="repair">15</span></p>
-      </div>
-
-      <div class="skill">
-        <p>Science: <span id="science">15</span></p>
-      </div>
-
-      <div class="skill">
-        <p>Small Guns: <span id="smallGuns">15</span></p>
-      </div>
-
-      <div class="skill">
-        <p>Sneak: <span id="sneak">15</span></p>
-      </div>
-
-      <div class="skill">
-        <p>Speech: <span id="speech">15</span></p>
-      </div>
-
-      <div class="skill">
-        <p>Unarmed: <span id="unarmed">15</span></p>
-      </div>
-
     </div>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
     <script src="scripts/special.js"></script>
     <script src="scripts/skills.js"></script>
+    <script src="scripts/derived.js"></script>
   </body>
 </html>

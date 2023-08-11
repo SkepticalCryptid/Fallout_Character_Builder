@@ -66,6 +66,8 @@ function increaseStrength() {
     updatePointsLeft(pointsLeft - 1);
   }
   updateSkill("strength");
+  updateCarryWeight();
+  updateMeleeDamage();
 }
 
 // Prevent stat from being lowered if the SPECIAL stat is already at 1, applies to all decreaseX functions
@@ -76,6 +78,8 @@ function decreaseStrength() {
     updatePointsLeft(pointsLeft + 1);
   }
   updateSkill("strength");
+  updateCarryWeight();
+  updateMeleeDamage();
 }
 
 
@@ -104,6 +108,10 @@ function increaseEndurance() {
     updatePointsLeft(pointsLeft - 1);
   }
   updateSkill("endurance");
+  updateHP();
+  updateRadResist();
+  updatePoisonResist();
+
 }
 
 function decreaseEndurance() {
@@ -113,6 +121,9 @@ function decreaseEndurance() {
     updatePointsLeft(pointsLeft + 1);
   }
   updateSkill("endurance");
+  updateHP();
+  updateRadResist();
+  updatePoisonResist();
 }
 
 function increaseCharisma() {
@@ -122,6 +133,7 @@ function increaseCharisma() {
     updatePointsLeft(pointsLeft - 1);
   }
   updateSkill("charisma");
+  updateDisposition();
 }
 
 function decreaseCharisma() {
@@ -131,6 +143,7 @@ function decreaseCharisma() {
     updatePointsLeft(pointsLeft + 1);
   }
   updateSkill("charisma");
+  updateDisposition();
 }
 
 function increaseIntelligence() {
@@ -140,6 +153,7 @@ function increaseIntelligence() {
     updatePointsLeft(pointsLeft - 1);
   }
   updateSkill("intelligence");
+  updateSkillRate();
 }
 
 function decreaseIntelligence() {
@@ -149,6 +163,7 @@ function decreaseIntelligence() {
     updatePointsLeft(pointsLeft + 1);
   }
   updateSkill("intelligence");
+  updateSkillRate();
 }
 
 function increaseAgility() {
@@ -158,6 +173,7 @@ function increaseAgility() {
     updatePointsLeft(pointsLeft - 1);
   }
   updateSkill("agility");
+  updateAP();
 }
 
 function decreaseAgility() {
@@ -167,6 +183,7 @@ function decreaseAgility() {
     updatePointsLeft(pointsLeft + 1);
   }
   updateSkill("agility");
+  updateAP();
 }
 
 function increaseLuck() {
@@ -176,6 +193,7 @@ function increaseLuck() {
     updatePointsLeft(pointsLeft - 1);
   }
   updateSkill("luck");
+  updateCritChance();
 }
 
 function decreaseLuck() {
@@ -185,4 +203,5 @@ function decreaseLuck() {
     updatePointsLeft(pointsLeft + 1);
   }
   updateSkill("luck");
+  updateCritChance();
 }

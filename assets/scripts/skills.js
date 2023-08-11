@@ -127,6 +127,7 @@ function getSpeech() {
 function getUnarmed() {
     let {endurance, luck} = getSpecial("endurance");
     let unarmed = Math.ceil(2 + (endurance * 2) + (luck / 2));
+    updateUnarmedDamage();
 
     return unarmed;
 }
@@ -394,12 +395,14 @@ skillClass.forEach((skillName) => {
                 if (!taggedState[12]) {
                     if (tagLeft > 0) {
                         addTag("unarmed", 12);
+                        updateUnarmedDamage();
                         break;
                     } 
                     break;
                 }
                 else {
                         decreaseTag("unarmed", 12);
+                        updateUnarmedDamage();
                     break;
                 }
                 break;

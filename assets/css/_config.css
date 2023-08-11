@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+* {
+    font-family: 'Source Code Pro', monospace;
+}
+
+body {
+    background-color: green;
+}
+
+:root {
+    --border-styling: 5px solid #023020;
+}
+
+/* Navitgation */
+.navigation-container {
+    width: 100%;
+    height: 8vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    border-bottom: var(--border-styling);
+}
+
+/* Derived Stats */
+.derived-stats-container {
+    margin-top: calc(8vh + 10px);
+    padding: 5px;
+    text-align: center;
+    border: var(--border-styling)
+}
+
+.derived-stats {
+    display: inline-block;
+    padding: 5px;
+}
+
+/* S.P.E.C.I.A.L. Stats */
+.special-container {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: var(--border-styling)
+}
+
+
+/* Skills */
+.skill-container {
+    padding-left: 10px;
+    border: var(--border-styling)
+}
+
+
+/* Footer */
+.footer-container {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin-top: 10px;
+    border-top: var(--border-styling);
+}
