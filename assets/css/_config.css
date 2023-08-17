@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
 * {
     font-family: 'Source Code Pro', monospace;
 }
 
 body {
-    background-color: green;
+    background-color: #F1E9D2;
 }
 
 :root {
     --border-styling: 5px solid #023020;
+    --vt-blue: #7EA3CF;
 }
 
 /* Navitgation */
@@ -20,6 +22,7 @@ body {
     left: 0;
     position: fixed;
     border-bottom: var(--border-styling);
+    background-color: var(--vt-blue);
 }
 
 /* Derived Stats */
@@ -27,7 +30,8 @@ body {
     margin-top: calc(8vh + 10px);
     padding: 5px;
     text-align: center;
-    border: var(--border-styling)
+    border: var(--border-styling);
+    border-bottom: none;
 }
 
 .derived-stats {
@@ -40,14 +44,37 @@ body {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    border: var(--border-styling)
+    border: var(--border-styling);
+    border-right: none;
 }
 
+.special-container span {
+    font-size: 1.2em;
+}
+
+.special-container #pointsLeft {
+    font-size: 1em;
+}
+
+.button {
+    border: none;
+    background: none;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 5px grey;
+}
+
+.button:hover {
+    color: var(--vt-blue);
+}
 
 /* Skills */
 .skill-container {
     padding-left: 10px;
     border: var(--border-styling)
+}
+
+.skill:hover {
+    border: 2px solid var(--vt-blue);
 }
 
 
@@ -58,4 +85,5 @@ body {
     bottom: 0;
     margin-top: 10px;
     border-top: var(--border-styling);
+    background-color: var(--vt-blue);
 }
