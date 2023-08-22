@@ -12,6 +12,7 @@ body {
 :root {
     --border-styling: 5px solid #023020;
     --vt-blue: #7EA3CF;
+    --vt-yellow: #EFDD6F;
 }
 
 /* Navitgation */
@@ -23,6 +24,11 @@ body {
     position: fixed;
     border-bottom: var(--border-styling);
     background-color: var(--vt-blue);
+}
+
+.navigation-container h1 {
+    color: var(--vt-yellow);
+    font-size: 3em;
 }
 
 /* Derived Stats */
@@ -37,6 +43,7 @@ body {
 .derived-stats {
     display: inline-block;
     padding: 5px;
+    margin-left: 30px;
 }
 
 /* S.P.E.C.I.A.L. Stats */
@@ -56,6 +63,10 @@ body {
     font-size: 1em;
 }
 
+.stat-container {
+    margin-top: 20px;
+}
+
 .button {
     border: none;
     background: none;
@@ -73,6 +84,11 @@ body {
     border: var(--border-styling)
 }
 
+.skill {
+    margin-top: 20px;
+    border: 2px solid transparent;
+}
+
 .skill:hover {
     border: 2px solid var(--vt-blue);
 }
@@ -86,4 +102,14 @@ body {
     margin-top: 10px;
     border-top: var(--border-styling);
     background-color: var(--vt-blue);
+    height: 8vh;
+    color: var(--vt-yellow);
+}
+
+.footer-container a {
+    color: var(--vt-yellow);
+}
+
+.footer-container a:hover {
+    color: black;
 }
